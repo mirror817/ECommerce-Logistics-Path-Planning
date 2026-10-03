@@ -1,15 +1,20 @@
+#include "Graph.h"
 #include <iostream>
+
 using namespace std;
 
+int main()
+{
+    Graph graph;
 
-enum NodeType {
-    WAREHOUSE,
-    DELIVERY_POINT,
-    TRANSFER_STATION
-};
+    graph.addNode(1, "Beijing Warehouse", WAREHOUSE);
+    graph.addNode(2, "Delivery Point 1", DELIVERY_POINT);
+    graph.addNode(3, "Transfer Station 1", TRANSFER_STATION);
 
-int main() {
-    cout << "E-commerce Logistics Path Planning System" << endl;
+    graph.addEdge(1, 2, 8.0, 5.0, 8.0);
+    graph.addEdge(1, 3, 12.0, 8.0, 12.0);
+
+    graph.displayNodes();
 
     return 0;
 }
