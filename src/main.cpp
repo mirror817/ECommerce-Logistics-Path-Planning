@@ -12,7 +12,7 @@ int main()
     graph.addNode(3, "Transfer Station 1", TRANSFER_STATION);
 
     graph.addEdge(1, 2, 8.0, 5.0, 8.0);
-    graph.addEdge(1, 3, 12.0, 8.0, 12.0);
+    graph.addEdge(1, 99, 12.0, 8.0, 12.0);
 
     graph.displayNodes();
 

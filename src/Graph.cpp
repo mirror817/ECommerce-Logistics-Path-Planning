@@ -57,7 +57,7 @@ void Graph::displayNodes() // 显示所有节点
 
 void Graph::addEdge(int from, int to, double time, double distance, double cost)
 {
-    Node* fromNode = nullptr;
+    Node* fromNode = nullptr; // 起点节点
 
     // 找到起点节点
     for (int i = 0; i < nodeCount; i++)
@@ -73,6 +73,24 @@ void Graph::addEdge(int from, int to, double time, double distance, double cost)
     if (fromNode == nullptr)
     {
         cout << "From node does not exist!" << endl;
+        return;
+    }
+
+    Node* toNode = nullptr; // 终点节点
+
+    for (int i = 0; i < nodeCount; i++)
+    {
+        if (nodes[i]->id == to)
+        {
+            toNode = nodes[i];
+            break;
+        }
+    }
+
+    // 终点不存在
+    if (toNode == nullptr)
+    {
+        cout << "To node does not exist!" << endl;
         return;
     }
 
