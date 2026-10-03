@@ -34,6 +34,15 @@ void Graph::addNode(int id, string name, NodeType type) // 添加节点
         return;
     }
 
+    for (int i = 0; i < nodeCount; i++) // 检查节点编号是否已存在
+    {
+        if (nodes[i]->id == id)
+        {
+            cout << "Node ID already exists!" << endl;
+            return;
+        }
+    }
+
     nodes[nodeCount] = new Node(id, name, type); // 创建新节点
     nodeCount++;
 }
