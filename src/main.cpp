@@ -13,7 +13,9 @@ int main()
     graph.addNode(1, "Test Warehouse", WAREHOUSE);
 
     graph.addEdge(1, 2, 8.0, 5.0, 8.0);
-    graph.addEdge(1, 99, 12.0, 8.0, 12.0);
+    graph.deleteEdge(1, 2);
+    graph.addEdge(1, 3, 12.0, 8.0, 12.0);
+    graph.deleteNode(1);
 
     graph.displayNodes();
 

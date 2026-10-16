@@ -17,6 +17,8 @@ public:
 
     void addNode(int id, string name, NodeType type);
     void addEdge(int from, int to, double time, double distance, double cost);
+    void deleteEdge(int from, int to);
+    void deleteNode(int id);
     void displayNodes();
 };
 
