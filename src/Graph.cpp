@@ -73,6 +73,40 @@ void Graph::displayNodes() // 显示所有节点
     }
 }
 
+void Graph::displayMatrix()
+{
+    cout << "    ";
+    for (int i = 0; i < nodeCount; i++)
+    {
+        cout << nodes[i]->id << " ";
+    }
+    cout << endl;
+
+    for (int i = 0; i < nodeCount; i++)
+    {
+        cout << nodes[i]->id << " ";
+
+        for (int j = 0; j < nodeCount; j++)
+        {
+            bool connected = false;
+
+            Edge* current = nodes[i]->firstEdge;
+            while (current != nullptr)
+            {
+                if (current->to == nodes[j]->id)
+                {
+                    connected = true;
+                    break;
+                }
+                current = current->next;
+            }
+
+            cout << (connected ? 1 : 0) << " ";
+        }
+
+        cout << endl;
+    }
+}
 void Graph::addEdge(int from, int to, double time, double distance, double cost)
 {
     Node* fromNode = nullptr; // 起点节点

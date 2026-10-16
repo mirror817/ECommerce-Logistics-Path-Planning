@@ -20,6 +20,7 @@ public:
     void deleteEdge(int from, int to);
     void deleteNode(int id);
     void displayNodes();
+    void displayMatrix();
 };
 
 #endif
